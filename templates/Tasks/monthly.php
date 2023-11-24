@@ -56,7 +56,7 @@ $nextMonth = $currentMonth->addMonths(1);
                 <?php endif; ?>
                 <?php foreach ($tasks as $task) : ?>
                     <tr>
-                        <td><?= h($task->begin->format("m/d H:i")) ?> - <?= $task->begin->month === $task->end->month ? h($task->end->format("H:i")) :  h($task->end->format("m/d H:i")) ?></td>
+                        <td><?= h($task->begin->format("m/d H:i")) ?> - <?= $task->begin->format("Ymd") === $task->end->format("Ymd") ? h($task->end->format("H:i")) :  h($task->end->format("m/d H:i")) ?></td>
                         <td><?= h($task->context) ?></td>
                         <td>
                             <?= $this->Html->image('icons/location-icon.svg', ['width' => '24px', 'class' => 'location-icon']); ?><?= h($task->place) ?>

@@ -44,7 +44,7 @@
                 <?php $prevTaskDate = "none"; ?>
                 <?php foreach ($tasks as $task) : ?>
                     <tr>
-                        <td><?= h($task->begin->format("m/d H:i")) ?> - <?= $task->begin->month === $task->end->month ? h($task->end->format("H:i")) :  h($task->end->format("m/d H:i")) ?></td>
+                        <td><?= h($task->begin->format("m/d H:i")) ?> - <?= $task->begin->format("Ymd") === $task->end->format("Ymd") ? h($task->end->format("H:i")) :  h($task->end->format("m/d H:i")) ?></td>
                         <td><?= h($task->context) ?></td>
                         <td class='td-place'>
                             <?= $this->Html->image('icons/location-icon.svg', ['width' => '21px', 'class' => 'location-icon']); ?><?= h($task->place) ?>
